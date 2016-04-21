@@ -86,7 +86,23 @@ sudo adduser test4 analytics
 sudo adduser test1 sudo
 
 
+# Install pip and virtualenv
+sudo apt-get install python-pip python-dev build-essential 
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv
 
+# Create a virtualenv
+virtual env venv
+
+# Activate virtual env
+source venv/bin/activate
+pip install requests
+pip freeze | grep requests
+
+deactivate
+pip freeze | grep requests
+
+# 
 # Générer une clé ssh pour pouvoir ouvrir une session sur le noued sans fournir le mot de passe
 ssh-keygen -t rsa -P ""
 
